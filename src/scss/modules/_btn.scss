@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-width: 110px;
+  padding: 0.75em;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color__black;
+
+  @include breakpoint($md) {
+    font-size: 1.5rem;
+    min-width: 270px;
+  }
+
+  &--yellow {
+    background: $color__yellow;
+    color: $color__white;
+  }
+
+  &--primary {
+    background: $color__primary;
+    color: $color__white;
+  }
+
+  &--outline-primary {
+    background: $color__white;
+    border: 3px solid $color__primary;
+  }
+
+  &--gradient-green {
+    background: $gradient__green;
+    color: $color__white;
+  }
+
+  &--gradient-blue {
+    background: $gradient__blue;
+    color: $color__white;
+  }
+
+  &--outline-black {
+    border: 5px solid $color__black;
+    background: $color__white;
+    color: $color__black;
+    border-radius: 0;
+    font-weight: 900;
+    padding: 1em;
+
+    @include breakpoint($lg) {
+      font-size: 1.75rem;
+      min-width: 350px;
+    }
+  }
+
+  &--fill-black {
+    @extend .btn--outline-black;
+    background: $color__black;
+    color: $color__white;
+  }
+}
