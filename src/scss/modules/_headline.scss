@@ -28,4 +28,22 @@
       font-size: 1.875rem;
     }
   }
+
+  &--decoration::after {
+    content: '';
+    display: inline-block;
+    background: $color__primary;
+    width: 0.5em;
+    height: 4px;
+    vertical-align: text-top;
+    position: relative;
+    top: 0.6rem;
+    margin-left: 0.68rem;
+
+    @include breakpoint($md) {
+      width: 1em;
+      height: 10px;
+      margin-left: 1rem;
+    }
+  }
 }
