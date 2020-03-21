@@ -7,7 +7,7 @@
 @include breakpoint-set('to ems', true);
 
 // VENDORS
-@import '~rfs/scss.scss';
+// @import '~rfs/scss.scss';
 @import '~normalize.css';
 
 // BASE
@@ -19,3 +19,4 @@
 @import 'modules/btn';
 @import 'modules/form';
 @import 'modules/headline';
+@import 'modules/generic-content';

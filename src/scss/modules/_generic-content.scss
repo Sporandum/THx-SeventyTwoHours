@@ -1,0 +1,22 @@
+.generic-content {
+  p {
+    font-size: 0.625rem;
+    font-weight: 400;
+
+    @include breakpoint($md) {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+  }
+
+  strong,
+  em {
+    font-size: 0.625rem;
+    font-weight: 700;
+    font-style: italic;
+
+    @include breakpoint($md) {
+      font-size: 1.25rem;
+    }
+  }
+}
