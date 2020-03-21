@@ -1,0 +1,20 @@
+// BOX SIZING FIX
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// pre
+pre {
+  white-space: pre-wrap;
+}
+
+// GLOBAL
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
