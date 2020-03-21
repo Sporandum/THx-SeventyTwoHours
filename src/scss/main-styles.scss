@@ -2,8 +2,11 @@
 @import 'base/variables';
 @import 'base/mixins';
 
-// VENDORS
+// BREAKPOINTS SASS IN EM
 @import '~breakpoint-sass';
+@include breakpoint-set('to ems', true);
+
+// VENDORS
 @import '~rfs/scss.scss';
 @import '~normalize.css';
 
@@ -12,3 +15,4 @@
 @import 'base/helpers';
 
 // MODULES
+@import 'modules/site-footer';
