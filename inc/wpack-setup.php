@@ -1,23 +1,26 @@
 <?php
 
-class MyPluginInit {
+class MyPluginInit
+{
 	/**
 	 * @var \WPackio\Enqueue
 	 */
 	public $enqueue;
 
-	public function __construct() {
+	public function __construct()
+	{
 		// It is important that we init the Enqueue class right at the plugin/theme load time
-		$this->enqueue = new \WPackio\Enqueue( 'seventyTwoHours', 'assets', '1.0.0', 'theme', false );
+		$this->enqueue = new \WPackio\Enqueue('seventyTwoHours', 'assets', '1.0.0', 'theme', false);
 		// Enqueue a few of our entry points
-		add_action( 'wp_enqueue_scripts', [ $this, 'scripts_enqueue' ] );
+		add_action('wp_enqueue_scripts', [$this, 'scripts_enqueue'], 100);
 	}
 
 
-	public function scripts_enqueue() {
+	public function scripts_enqueue()
+	{
 		// Enqueue the `main` entry from `reactapp` file entry.
-		$this->enqueue->enqueue( 'js', 'scripts', [] );
-		$this->enqueue->enqueue( 'css', 'styles', [] );
+		$this->enqueue->enqueue('js', 'scripts', []);
+		$this->enqueue->enqueue('css', 'styles', []);
 	}
 }
 

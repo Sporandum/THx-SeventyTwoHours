@@ -16,7 +16,7 @@ function seventytwohours_features() {
 }
 
 // Remove support editor for front-page
-add_action( 'admin_init', 'hide_editor' );
+// add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
 
     if($_GET['post'] == get_option('page_on_front')){ 
@@ -33,3 +33,4 @@ function remove_comments_field($fields) {
 	unset($fields['url']);
 	return $fields;
 }
+
