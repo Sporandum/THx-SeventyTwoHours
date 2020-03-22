@@ -19,4 +19,16 @@
       font-size: 1.25rem;
     }
   }
+
+  &--list-title {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      @extend .headline;
+      @extend .headline--small;
+    }
+  }
 }

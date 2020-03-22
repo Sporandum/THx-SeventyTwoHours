@@ -31,7 +31,7 @@
 
       @include breakpoint($xl) {
         .front-page__card-content {
-          margin-top: 3rem;
+          padding-top: 3rem;
         }
       }
     }

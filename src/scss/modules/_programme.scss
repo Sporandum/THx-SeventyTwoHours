@@ -1,0 +1,120 @@
+.programme {
+
+  &__illustration {
+
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    margin: 1.25rem 10vw 1.25rem auto;
+
+    @include breakpoint($md) {
+      margin: 0 0 0 auto;
+      width: 9rem;
+      height: 9rem;
+    }
+
+    @include breakpoint($lg) {
+      width: 13.125rem;
+      height: 13.125rem;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    &::before {
+      height: 85%;
+      width: 85%;
+      background: linear-gradient(-150deg, #37E695 50%, #169D5F);
+      top: 0;
+      right: 0;
+    }
+
+    &::after {
+      height: 76%;
+      width: 76%;
+      border: 3px solid #9B1DE3;
+      bottom: 5%;
+      left: 0;
+    }
+  }
+
+  &__cards {
+
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    margin-bottom: 7.375rem;
+
+    @include breakpoint($md) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 12.5%;
+      row-gap: 4.7rem;
+      padding-top: 13.5rem;
+      margin-top: -7.5rem;
+    }
+    @include breakpoint($lg) {
+      column-gap: 25%;
+    }
+
+    @include breakpoint($md) {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 87%;
+        width: 3px;
+        background: $color__black;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+    }
+
+    .programme__card:nth-child(odd) {
+      margin-left: 10vw;
+      margin-right: 10vw;
+
+      @include breakpoint($md) {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -8rem;
+      }
+
+      @include breakpoint($xl) {
+        margin-top: -12rem;
+      }
+    }
+
+    .programme__card:nth-child(even) {
+
+      margin-left: 20vw;
+      position: relative;
+
+      @include breakpoint($md) {
+        margin-left: 0;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 5px;
+        background: $color__primary;
+        top: 0;
+        left: -5vw;
+        transform: translateX(-50%);
+
+        @include breakpoint($md) {
+          display: none;
+        }
+      }
+    }
+  }
+}

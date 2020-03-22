@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper wrapper--narrow">
+		<div class="programme">
+			<h1 class="headline headline--upper">{{post.title}}</h1>
+			<div class="programme__illustration"></div>
+			<div class="programme__cards">
+				{% for item in post.meta('programme_content') %}
+					<section class="programme__card">
+						<h2 class="headline headline--upper">{{item.title}}</h2>
+						<div class="generic-content generic-content--list-title">
+							{{item.content}}
+						</div>
+					</section>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
