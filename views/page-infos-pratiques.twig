@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper wrapper--narrow">
+		<div class="infos">
+			<h1 class="headline headline--upper">{{post.title}}</h1>
+			<div class="infos__blocs">
+				{% for infos_bloc in post.meta('infos_bloc') %}
+					<section class="infos__bloc">
+						<h2 class="headline">{{infos_bloc.title}}</h2>
+						{% for infos_sub_bloc in infos_bloc.infos_sub_bloc %}
+							{% set media = Image(infos_sub_bloc.media) %}
+							<div class="infos__sub-bloc">
+								<div class="infos__sub-bloc__content">
+									<h3 class="headline headline--small">{{infos_sub_bloc.sub_title}}</h3>
+									<div class="generic-content">
+										{{infos_sub_bloc.content}}
+									</div>
+								</div>
+								<div class="infos__sub-bloc__img">
+									<img src="{{media.src}}" alt="{{media.alt}}" sizes="{{media.img_sizes}}" srcset="{{media.srcset}}">
+								</div>
+							</div>
+
+						{% endfor %}
+					</section>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

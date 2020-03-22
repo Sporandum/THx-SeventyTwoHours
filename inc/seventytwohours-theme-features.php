@@ -15,12 +15,20 @@ function seventytwohours_features()
 	));
 }
 
-// Remove support editor for front-page
+// Remove support editor for some pages
 add_action('admin_init', 'hide_editor');
 function hide_editor()
 {
-	if (!empty($_GET['post']) && $_GET['post'] == get_option('page_on_front')) {
-		remove_post_type_support('page', 'editor');
+	$pages_ID = array(
+		get_option('page_on_front'), // Front Page
+		get_page_by_path('programme')->ID,
+		get_page_by_path('infos-pratiques ')->ID,
+	);
+
+	foreach ($pages_ID as $page_ID) {
+		if (!empty($_GET['post']) && $_GET['post'] ==  $page_ID) {
+			remove_post_type_support('page', 'editor');
+		}
 	}
 }
 

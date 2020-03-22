@@ -1,0 +1,64 @@
+.infos {
+  &__blocs {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    @include breakpoint($md) {
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &__bloc {
+    display: grid;
+    row-gap: 1rem;
+
+    &>div {
+      margin-bottom: 1.5rem;
+
+      @include breakpoint($md) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    @include breakpoint($md) {
+      &>div:nth-child(odd) {
+        grid-template:
+          "img content"/ 1fr 1fr;
+      }
+    }
+  }
+
+  &__sub-bloc {
+    display: grid;
+    grid-template:
+      "content"
+      "img"/ 1fr;
+      gap: 1.5rem;
+
+    &>* {
+      align-self: center;
+    }
+
+    @include breakpoint($md) {
+      grid-template:
+        "content img"/ 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  &__sub-bloc__content {
+    grid-area: content;
+  }
+
+  &__sub-bloc__img {
+    grid-area: img;
+    height: auto;
+    justify-self: center;
+
+    img {
+      max-height: 30vh;
+    }
+  }
+}
