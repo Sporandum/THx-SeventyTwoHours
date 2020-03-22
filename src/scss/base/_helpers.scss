@@ -11,17 +11,6 @@
   border: 0 !important;
 }
 
-.wrapper {
-  max-width: 1360px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  &--footer {
-    padding: 0 3rem;
-  }
-}
-
 %current-menu-item,
 .current-menu-item {
   color: $color__primary;

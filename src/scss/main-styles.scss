@@ -15,8 +15,12 @@
 @import 'base/helpers';
 
 // MODULES
+@import 'modules/wrapper';
 @import 'modules/site-footer';
+
 @import 'modules/btn';
 @import 'modules/form';
 @import 'modules/headline';
 @import 'modules/generic-content';
+
+@import 'modules/front-page';

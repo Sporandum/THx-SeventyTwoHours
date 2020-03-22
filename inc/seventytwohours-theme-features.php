@@ -2,7 +2,8 @@
 
 // Theme support
 add_action('after_setup_theme', 'seventytwohours_features');
-function seventytwohours_features() {
+function seventytwohours_features()
+{
 
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
@@ -12,16 +13,15 @@ function seventytwohours_features() {
 		'gallery',
 		'caption',
 	));
-
 }
 
 // Remove support editor for front-page
-// add_action( 'admin_init', 'hide_editor' );
-function hide_editor() {
-
-    if($_GET['post'] == get_option('page_on_front')){ 
-        remove_post_type_support('page', 'editor');
-    }
+add_action('admin_init', 'hide_editor');
+function hide_editor()
+{
+	if (!empty($_GET['post']) && $_GET['post'] == get_option('page_on_front')) {
+		remove_post_type_support('page', 'editor');
+	}
 }
 
 // Remove <p> tag around input in contact form 7 plugin
@@ -29,8 +29,8 @@ function hide_editor() {
 
 // Remove Web site from comments fields
 add_filter('comment_form_default_fields', 'remove_comments_field');
-function remove_comments_field($fields) {
+function remove_comments_field($fields)
+{
 	unset($fields['url']);
 	return $fields;
 }
-

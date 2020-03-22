@@ -1,0 +1,112 @@
+.front-page {
+
+  // Customs Layout
+  &__cards {
+    p {
+      @include breakpoint($xl) {
+        max-width: 585px;
+      }
+    }
+
+    .front-page__card:nth-child(even) {
+      @include breakpoint($lg) {
+        grid-template:
+          "image content"
+          "image btn"/ 1fr 1.1fr;
+      }
+
+      @include breakpoint($xl) {
+        grid-template:
+          "image content"
+          "image btn"/ 1fr 1.22fr;
+      }
+    }
+
+    .front-page__card:nth-child(1) {
+      @include breakpoint($xl) {
+        .front-page__card-img {
+          align-self: flex-start;
+        }
+      }
+
+      @include breakpoint($xl) {
+        .front-page__card-content {
+          margin-top: 3rem;
+        }
+      }
+    }
+
+    .front-page__card:nth-child(2) {
+      @include breakpoint($lg) {
+        margin-top: -3rem;
+      }
+
+      @include breakpoint($xl) {
+        margin-top: -7.5rem;
+      }
+
+      img {
+        @include breakpoint($lg) {
+          margin-left: 3.8rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+
+    .front-page__card:nth-child(3) {
+      @include breakpoint($lg) {
+        margin-top: -2rem;
+      }
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template:
+      "content"
+      "btn"/ 1fr;
+    margin-bottom: 3rem;
+
+    @include breakpoint($lg) {
+      grid-template:
+        "content image"
+        "btn     image"/ 1fr 1.1fr;
+
+      column-gap: 4.3rem;
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($xl) {
+      grid-template:
+        "content image"
+        "btn     image"/ 1fr 1.22fr;
+    }
+  }
+
+  &__card-content {
+    grid-area: content;
+  }
+
+  &__card-content--no-btn {
+    grid-row: 2 / -1;
+  }
+
+  &__card-btn {
+    grid-area: btn;
+    margin-top: 1.4rem;
+
+    @include breakpoint($xl) {
+      margin-top: 0;
+    }
+  }
+
+  &__card-img {
+    display: none;
+
+    @include breakpoint($lg) {
+      display: block;
+      grid-row: 1 / -1;
+      align-self: center;
+    }
+  }
+}

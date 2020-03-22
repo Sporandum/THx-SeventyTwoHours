@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper wrapper--large">
+		<div class="front-page">
+			<h1 class="sr-only">{{post.title}}</h1>
+			<div class="front-page__cards">
+				{% for item in post.meta('home_page_content') %}
+					{% set media = Image(item.media) %}
+					<section class="front-page__card">
+						<div class="front-page__card-content {{ item.has_call_to_action ? '' : 'front-page__card-content--no-btn' }}">
+							<span class="headline headline--decoration">0{{loop.index}}</span>
+							<h2 class="headline">{{item.title}}</h2>
+							<h3 class="headline headline--small">{{item.sub_title}}</h3>
+							<div class="generic-content">
+								{{item.content}}
+							</div>
+						</div>
+						<div class="front-page__card-img">
+							<img src="{{media.src}}" alt="{{media.alt}}" srcset="{{media.srcset}}" sizes="{{media.img_sizes}}">
+						</div>
+						{% if item.has_call_to_action %}
+							{% set btn = item.call_to_action %}
+							<div class="front-page__card-btn">
+								<a role="button" href="#" class="btn {{btn.style}}">{{btn.title}}</a>
+							</div>
+						{% endif %}
+					</section>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
