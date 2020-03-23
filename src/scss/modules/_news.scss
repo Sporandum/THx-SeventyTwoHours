@@ -1,0 +1,73 @@
+.news {
+
+  display: grid;
+  row-gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  @include breakpoint($lg) {
+    row-gap: 6rem;
+    margin-bottom: 6rem;
+  }
+  
+  &__cards {
+    display: grid;
+    row-gap: 2rem;
+
+    @include breakpoint($lg) {
+      row-gap: 3.125rem;
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template:
+      "img"
+      "content"
+      "link"/ 1fr;
+    position: relative;
+
+    @include breakpoint($lg) {
+      grid-template:
+        "img content"
+        "img link"/ 0.95fr 1fr;
+      column-gap: 11%;
+    }
+  }
+
+  &__card::after {
+    @include breakpoint($lg) {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 70%;
+      width: 4px;
+      background: $color__black;
+      top: 0;
+      right: 51%;
+    }
+  }
+
+  &__card__img {
+    grid-area: img;
+  }
+
+  &__card__content {
+    grid-area: content;
+  }
+
+  &__card__link {
+    grid-area: link;
+    font-weight: 900;
+    font-size: 0.65rem;
+
+    @include breakpoint($lg) {
+      justify-self: right;
+      margin-right: 1.5rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}

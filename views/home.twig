@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper">
+		<div class="news">
+			<h1 class="headline headline--upper">{{wp_title}}</h1>
+			<div class="news__cards">
+				{% for post in posts %}
+					<div class="news__card">
+						{% if post.thumbnail %}
+							{% set img = Image(post.thumbnail) %}
+							<div class="news__card__img">
+								<a href="{{post.link}}">
+									<img src="{{img.src('medium_large')}}" alt="{{img.alt}}" srcset="{{img.srcset('medium_large')}}" sizes="{{img.img_sizes('medium_large')}}">
+								</a>
+							</div>
+						{% endif %}
+						<div class="news__card__content">
+							<h2 class="headline headline--small headline--upper">{{post.title}}</h2>
+							<div class="generic-content">
+								<p>{{post.preview.length(45).read_more(false)}}</p>
+							</div>
+						</div>
+						<a class="news__card__link" href="{{post.link}}">Lire la suite >></a>
+					</div>
+				{% endfor %}
+			</div>
+
+			{% if posts.pagination.pages %}
+				<div class="news__pagination">
+					{% if posts.pagination.next %}
+						<a href="{{posts.pagination.next.link}}" class="btn btn--gradient-green">News plus anciennes</a>
+					{% endif %}
+
+					{% if posts.pagination.prev %}
+						<a href="{{posts.pagination.prev.link}}" class="btn btn--gradient-green">News plus recentes</a>
+					{% endif %}
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}
