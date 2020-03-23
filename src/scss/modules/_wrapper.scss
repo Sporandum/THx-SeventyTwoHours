@@ -1,21 +1,21 @@
 .wrapper {
-  max-width: calc(1234px + 2rem);
+  max-width: calc(1234px + 4rem);
   width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 
   &--large {
-    max-width: calc(1371px + 2rem);
+    max-width: calc(1371px + 4rem);
   }
 
   &--narrow {
-    max-width: calc(1076px + 2rem);
+    max-width: calc(1076px + 4rem);
   }
 
   &--footer {
     padding: 0 3rem;
     @include breakpoint($md) {
-      padding: 0 1rem;
+      padding: 0 2rem;
     }
   }
 }

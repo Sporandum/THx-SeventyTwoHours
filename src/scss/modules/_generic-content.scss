@@ -26,9 +26,25 @@
       margin: 0;
       padding: 0;
     }
+
     li {
       @extend .headline;
       @extend .headline--small;
     }
+  }
+
+  h1 {
+    @extend .headline;
+    @extend .headline--upper;
+  }
+
+  h2 {
+    @extend .headline;
+    @extend .headline--medium;
+  }
+
+  h3 {
+    @extend .headline;
+    @extend .headline--small;
   }
 }
