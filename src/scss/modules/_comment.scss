@@ -1,0 +1,50 @@
+.comment {
+  display: grid;
+  grid-template-areas:
+    "avatar entry";
+  grid-template-columns: auto 1fr;
+  column-gap: 4.5rem;
+
+  // comments
+  &s {
+    display: grid;
+    row-gap: 1.5rem;
+    margin: 1.5rem auto;
+    @include breakpoint($lg) {
+      row-gap: 3rem;
+      margin: 3rem auto;
+    }
+  }
+
+  &__avatar {
+    grid-area: avatar;
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      @include breakpoint($lg) {
+        width: 8rem;
+        height: 8rem;
+      }
+      border-radius: 50%;
+    }
+  }
+
+  &__entry {
+    grid-area: entry;
+  }
+
+  &__entry-info {
+    font-weight: 500;
+    margin: 0;
+    font-size: 0.75rem;
+
+    @include breakpoint($lg) {
+      font-size: 1.25rem;
+    }
+
+    &--blue {
+      color: $color__blue;
+    }
+  }
+}

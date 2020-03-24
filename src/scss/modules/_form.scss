@@ -19,10 +19,32 @@
       padding: 0.9rem 1.68rem;
       margin-bottom: 2.5rem;
     }
-    
+
     &:focus {
       outline: 1px solid rgba($color: #000000, $alpha: 0.4);
       border: 1px solid $color__primary;
+    }
+  }
+
+  &--comment {
+
+    margin-top: 1rem;
+    
+    textarea {
+      max-height: 10rem;
+      resize: none;
+    }
+
+    .form__input {
+      border-radius: 0.2rem;
+
+      @include breakpoint($md) {
+        border-radius: 0.5rem;
+      }
+
+      &:focus {
+        border-color: $color__blue;
+      }
     }
   }
 }

@@ -1,0 +1,16 @@
+<form class="comment form form--comment" action="{{site.site_url~'/wp-comments-post.php'}}" method="post">
+	<input type="hidden" name="comment_post_ID" value="{{post.id}}">
+	<input type="hidden" name="comment_parent" value="{{comment.ID|default('0')}}">
+	<input type="hidden" name="email" value="{{user.email}}">
+	<input type="hidden" name="author" value="{{user.name}}">
+
+	<div class="comment__avatar">
+		<img src="{{user.avatar(128)}}" alt="">
+	</div>
+	<div class="comment__entry">
+		<label class="form__label" for="comment">Laisser un commentaire</label>
+		<textarea placeholder="Commenter ..." class="form__input" name="comment" id="comment" name="comment" cols="30" rows="10" required></textarea>
+		<input class="btn btn--gradient-blue btn--push-right" type="submit" value="Envoyer" name="Submit">
+	</div>
+
+</form>

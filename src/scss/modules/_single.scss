@@ -1,0 +1,24 @@
+.single {
+
+  &__entry {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    @include breakpoint($lg) {
+      flex-direction: row;
+    }
+
+    &>* {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__date {
+    color: $color__blue;
+    font-weight: 300;
+    font-size: 0.65rem;
+    @include breakpoint($md) {
+      font-size: 1.25rem;
+    }
+  }
+}
