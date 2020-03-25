@@ -14,3 +14,11 @@ require get_theme_file_path('/inc/seventytwohours-post-types.php');
 
 // Custom theme's functions
 require get_theme_file_path('/inc/seventytwohours-theme-features.php');
+
+
+
+if (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] ==='wp-login.php' ) {
+	if (!empty($_GET['action']) && $_GET['action'] === 'lostpassword') {
+		wp_safe_redirect(site_url('/reset-password'));
+	}
+}

@@ -35,9 +35,9 @@
 					<div class="comments">
 						{% for comment in post.comments %}
 							{% if comment.comment_approved %}
-								<div class="comment">
+								<div class="comment" id="comment-{{comment.id}}">
 									<div class="comment__avatar">
-										<img src="{{comment.avatar(128)}}" alt="">
+										<img src="{{comment.avatar(128)}}" alt="Avatar de {{comment.comment_author}}">
 									</div>
 									<div class="comment__entry">
 										<p class="comment__entry-info">{{comment.author.name}}<span class="comment__entry-info--blue">
