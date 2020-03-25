@@ -1,0 +1,45 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper wrapper--contests">
+		<div class="contests">
+			<h1 class="headline headline--upper">{{wp_title}}</h1>
+			<div class="contests__cards">
+				{% for post in posts %}
+					<div class="contests__card">
+						{% if post.thumbnail %}
+							{% set img = Image(post.thumbnail) %}
+							<div class="contests__card__img">
+								<a href="{{post.link}}">
+									<img src="{{img.src('contests')}}" alt="{{img.alt}}" srcset="{{img.srcset('contests')}}" sizes="{{img.img_sizes('contests')}}">
+								</a>
+							</div>
+						{% endif %}
+						<div class="contests__card__content">
+							<h2 class="headline headline--upper">{{post.title}}</h2>
+							<div class="generic-content">
+								<p>{{post.preview.length(45).read_more(false)}}</p>
+							</div>
+						</div>
+						<div class="contests__card__btn">
+							<a class="btn btn--gradient-green" href="{{post.link}}">Participer</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			{% if posts.pagination.pages %}
+				<div class="contests__pagination">
+					{% if posts.pagination.next %}
+						<a href="{{posts.pagination.next.link}}" class="btn btn--gradient-green">News plus anciennes</a>
+					{% endif %}
+
+					{% if posts.pagination.prev %}
+						<a href="{{posts.pagination.prev.link}}" class="btn btn--gradient-green">News plus recentes</a>
+					{% endif %}
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}

@@ -13,6 +13,8 @@ function seventytwohours_features()
 		'gallery',
 		'caption',
 	));
+
+	add_image_size('contests', 1040, 400, true);
 }
 
 // Remove support editor for some pages

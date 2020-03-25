@@ -1,0 +1,12 @@
+.contests {
+  @extend .news;
+
+  &__cards {
+    @extend .news__cards
+  }
+
+  &__card__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
