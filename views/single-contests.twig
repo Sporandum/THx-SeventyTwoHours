@@ -1,0 +1,10 @@
+{% extends "single.twig" %}
+
+{% block single_thumbnail %}
+	{% if post.thumbnail %}
+		{% set img = post.thumbnail %}
+		<div class="single__thumbnail">
+			<img src="{{img.src('contests')}}" alt="{{img.alt}}" srcset="{{img.srcset('contests')}}" sizes="{{img.img_sizes('contests')}}">
+		</div>
+	{% endif %}
+{% endblock %}

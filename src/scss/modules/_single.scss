@@ -21,4 +21,8 @@
       font-size: 1.25rem;
     }
   }
+
+  &__pagination {
+    @extend .news__pagination;
+  }
 }

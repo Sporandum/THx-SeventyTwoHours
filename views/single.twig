@@ -1,14 +1,16 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="wrapper">
+	<div class="wrapper {{ post.post_type == 'contests' ? 'wrapper--contests' : ''}}">
 		<div class="single">
+		{% block single_thumbnail %}
 			{% if post.thumbnail %}
 				{% set img = post.thumbnail %}
 				<div class="single__thumbnail">
 					<img src="{{img.src}}" alt="{{img.alt}}" srcset="{{img.srcset}}" sizes="{{img.img_sizes}}">
 				</div>
 			{% endif %}
+		{% endblock %}
 
 		</div>
 		<div class="single__entry">
@@ -19,6 +21,19 @@
 		<div class="generic-content">
 			{{post.content}}
 		</div>
+	
+		{% if next_post or prev_post %}
+			<div class="single__pagination">
+				{% if next_post %}
+					<a href="{{next_post.link}}" class="btn btn--gradient-green">Article suivant</a>
+				{% endif %}
+
+				{% if prev_post %}
+					<a href="{{prev_post.link}}" class="btn btn--gradient-green">Article precedent</a>
+				{% endif %}
+			</div>
+		{% endif %}
+
 
 		{% if post.comment_status == 'open' %}
 			<div class="wrapper wrapper--narrow">

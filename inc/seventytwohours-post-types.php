@@ -7,7 +7,7 @@ function seventytwohours_post_types() {
 		'menu_icon' => 'dashicons-visibility',
 		'show_in_rest' => true,
 		'has_archive' => true, // For use block editor
-		'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+		'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
 		'labels' => array(
 			'name' => 'Contests',
 			'add_new_item' => 'Ajouter un contest',
