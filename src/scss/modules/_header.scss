@@ -1,0 +1,57 @@
+.header {
+
+  &__bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    background: $color__white;
+  }
+
+  &[data-menu=fixed] {
+    &+* {
+      margin-top: 5rem;
+    }
+  }
+
+  &__logo {
+    height: 4rem;
+    position: fixed;
+    padding-top: 0.5rem;
+    transition: opacity 0.5s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+
+    &--right-on-xxl {
+      @include breakpoint($xxl) {
+        right: 0;
+        padding-right: calc((50vw - 822px) + 5rem);
+      }
+    }
+
+    &--hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &--hide-on-xxl {
+      @include breakpoint($xxl) {
+        display: none;
+      }
+    }
+
+    &--menu-mobile {
+      position: relative;
+
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    & * {
+      height: inherit;
+    }
+
+  }
+}

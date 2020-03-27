@@ -9,13 +9,49 @@
     {{ function('wp_body_open') }}
 
     {% block header %}
-    
+    <header id='site-header' class="header wrapper wrapper--menu-fixed" data-menu='fixed'>
+        <div class="header__bg"></div>
+
+        {{ include('_header-logo.twig', {headerLogoClass : 'header__logo header__logo--right-on-xxl'})}}
+
+        <div class="menu-desktop__container menu-desktop__container--fixed">
+            <ul class="menu-desktop menu-desktop--left">
+                {% include "menus/menu-left.twig" %}
+            </ul>
+            <ul class="menu-desktop menu-desktop--top">
+                {% include "menus/menu-top.twig" %}
+            </ul>
+            <ul class="menu-desktop menu-desktop--right">
+                {% include "menus/menu-right.twig" %}
+            </ul>
+        </div>
+     
+        <div id="menu-mobile" class="menu-mobile__container">
+
+            {{ include('_header-logo.twig', {headerLogoClass : 'header__logo header__logo--menu-mobile'})}}
+
+            
+            <ul class="menu-mobile">
+                {% include "menus/menu-left.twig" %}
+            </ul>
+            <ul class="menu-mobile">
+                {% include "menus/menu-top.twig" %}
+            </ul>
+            <ul class="menu-mobile">
+                {% include "menus/menu-right.twig" %}
+            </ul>
+        </div>
+        <div id="menu-mobile-trigger" class="menu-burger menu-burger--is-black">
+            <div></div>
+        </div>
+    </header>
     {% endblock %}
 
     
     {% block content %}
     
     {% endblock %}
+    
 
     {% block footer %}
         {% include "footer.twig" %}

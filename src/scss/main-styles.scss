@@ -18,6 +18,11 @@
 @import 'modules/wrapper';
 @import 'modules/site-footer';
 
+@import 'modules/header';
+@import 'modules/menu-desktop';
+@import 'modules/menu-mobile';
+@import 'modules/menu-burger';
+
 @import 'modules/form';
 @import 'modules/btn';
 @import 'modules/headline';
@@ -27,6 +32,7 @@
 
 
 @import 'modules/front-page';
+@import 'modules/hero';
 @import 'modules/programme';
 @import 'modules/infos';
 @import 'modules/generic-page';

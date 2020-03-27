@@ -15,6 +15,12 @@ function seventytwohours_features()
 	));
 
 	add_image_size('contests', 1040, 400, true);
+
+	register_nav_menus(array(
+		'header_menu_left' => 'Primary Menu Left',
+		'header_menu_top' => 'Primary Menu Top',
+		'header_menu_right' => 'primary Menu Right'
+	));
 }
 
 // Remove support editor for some pages

@@ -1,0 +1,81 @@
+.menu-burger {
+  position: fixed;
+  top: 0;
+  left: calc(100vw - 5rem);
+  height: 3rem;
+  width: 3rem;
+
+  & *,
+  &::after,
+  &::before {
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+  }
+
+  div {
+    top: 50%;
+    right: 15%;
+    transform: scaleX(1);
+    position: absolute;
+    width: 2rem;
+    height: 3px;
+  }
+
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 3px;
+    top: 35%;
+    left: 5%;
+    transform: rotate(0) translate(0);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 3px;
+    top: 65%;
+    left: 5%;
+    transform: rotate(0) translate(0);
+  }
+
+
+  &--menu-is-visible {
+
+    & *,
+    &::after,
+    &::before {
+      background: $color__black;
+    }
+
+    div {
+      transform: scaleX(0);
+    }
+
+    &::before {
+      transform: rotate(45deg) translate(10px);
+    }
+
+    &::after {
+      transform: rotate(-45deg) translate(10px);
+    }
+  }
+
+  &--is-black {
+
+    & *,
+    &::after,
+    &::before {
+      background: $color__black;
+    }
+  }
+
+  @include breakpoint($xxl) {
+    display: none;
+  }
+}

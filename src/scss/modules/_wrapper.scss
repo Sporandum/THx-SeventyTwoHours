@@ -3,6 +3,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 
   &--large {
     max-width: calc(1371px + 4rem);
@@ -11,19 +12,34 @@
   &--narrow {
     max-width: calc(1076px + 4rem);
   }
-  
+
   &--contests {
     max-width: calc(1040px + 4rem);
   }
 
   &--footer {
     padding: 0 3rem;
+
     @include breakpoint($md) {
       padding: 0 2rem;
     }
   }
 
-  &>.wrapper {
-    padding: 0;
+  &--hero {
+    height: 100vh;
+    max-width: 100%;
+
+    &>* {
+      z-index: 100;
+    }
+  }
+
+  &--menu-fixed {
+    position: absolute;
+    max-width: 100%;
+
+    &>* {
+      z-index: 100;
+    }
   }
 }
