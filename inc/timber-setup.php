@@ -1,5 +1,6 @@
 <?php
 
+use Timber\Menu;
 use Timber\Timber;
 
 $timber = new Timber;
@@ -8,6 +9,20 @@ $timber = new Timber;
  * Sets the directories (inside your theme) to find .twig files
  */
 Timber::$dirname = array('views');
+
+/**
+ * Add menus to Timber
+ */
+function add_menus_to_context($context) {
+
+	$context['header_menu_left'] = new Menu('header_menu_left');
+	$context['header_menu_top'] = new Menu('header_menu_top');
+	$context['header_menu_right'] = new Menu('header_menu_right');
+
+	return $context;
+
+}
+add_filter('timber/context', 'add_menus_to_context');
 
 
 // custom main query parameters
