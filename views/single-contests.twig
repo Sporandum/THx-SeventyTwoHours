@@ -1,5 +1,11 @@
 {% extends "single.twig" %}
 
+{% block title %}
+<div class="wrapper">
+	<p class="headline headline--upper">Nos Contests</p>
+</div>
+{% endblock %}
+
 {% block single_thumbnail %}
 	{% if post.thumbnail %}
 		{% set img = post.thumbnail %}

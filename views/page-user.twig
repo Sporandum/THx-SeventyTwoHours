@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="wrapper">
+		<div class="wrapper wrapper--user-form">
+			<div class="user">
+				<div class="generic-content">
+					{{post.content}}
+					{% if not user and post.slug != 'register' %}
+						<p>
+							<a href="{{site.url}}/register">Créer un nouveau compte</a>
+						</p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

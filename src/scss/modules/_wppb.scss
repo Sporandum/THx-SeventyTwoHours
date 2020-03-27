@@ -35,3 +35,12 @@
     }
   }
 }
+
+.alert {
+
+  padding: 1em;
+
+  &.wppb-success {
+    background-color: rgba($color: $color__primary, $alpha: 0.5);
+  }
+}

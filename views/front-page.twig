@@ -18,7 +18,17 @@
 			{% include "menus/menu-right.twig" %}
 		</ul>
 	</div>
-	<div class="hero"></div>
+	<div class="hero hero--bg">
+		<picture class="hero__bg">
+			<source srcset="{{theme.link}}/assets/img/alexandre-debieve-1115827-unsplash.jpg 1x,
+							{{theme.link}}/assets/img/alexandre-debieve-1115827-unsplash@2x.jpg 2x"
+					media="(min-width: 376px)">
+			<img 	src="{{theme.link}}/assets/img/Background.jpg" 
+					srcset="{{theme.link}}/assets/img/Background.jpg 1x, 
+							{{theme.link}}/assets/img/Background@2x.jpg 2x" 
+					alt="">
+		</picture>
+	</div>
 	<div class="menu-desktop__container menu-desktop__container--hide-on-scroll">
 		<ul class="menu-desktop menu-desktop--left">
 			{% include "menus/menu-left.twig" %}
@@ -30,7 +40,16 @@
 			{% include "menus/menu-right.twig" %}
 		</ul>
 	</div>
-	<div id="menu-mobile" class="menu-mobile__container">
+	<div class="hero">
+		<div class="hero__brand-logo">
+		<picture>
+			<source srcset="{{theme.link}}/assets/img/logo_72hours_web.png"
+					media="(min-width: 600px)" >
+			<img src="{{theme.link}}/assets/img/logo_72hours_mobile.png" alt="Logo 72hours">
+		</picture>
+		</div>
+	</div>
+	<div aria-hidden="true" id="menu-mobile" class="menu-mobile__container">
 
 		{{ include('_header-logo.twig', {headerLogoClass : 'header__logo header__logo--menu-mobile'})}}
 
@@ -44,18 +63,19 @@
 			{% include "menus/menu-right.twig" %}
 		</ul>
 	</div>
-	<div id="menu-mobile-trigger" class="menu-burger">
+	<div aria-hidden="true" id="menu-mobile-trigger" class="menu-burger">
 		<div></div>
 	</div>
 </header>
 
 {% endblock %}
 
+{% block title %}
+{% endblock %}
+
 {% block content %}
 	<div class="wrapper wrapper--large">
-
 		<div class="front-page">
-			<h1 class="sr-only">{{post.title}}</h1>
 			<div class="front-page__cards">
 				{% for item in post.meta('home_page_content') %}
 					{% set media = Image(item.media) %}

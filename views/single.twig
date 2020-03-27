@@ -1,5 +1,11 @@
 {% extends "base.twig" %}
 
+{% block title %}
+<div class="wrapper">
+	<p class="headline headline--upper">News</p>
+</div>
+{% endblock %}
+
 {% block content %}
 	<div class="wrapper {{ post.post_type == 'contests' ? 'wrapper--contests' : ''}}">
 		<div class="single">

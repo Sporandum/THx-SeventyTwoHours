@@ -6,11 +6,23 @@
     right: 0;
     height: 5rem;
     background: $color__white;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
   }
 
   &[data-menu=fixed] {
     &+* {
-      margin-top: 5rem;
+      margin-top: 7rem;
+    }
+  }
+  &[data-menu=scroll] {
+    &+* {
+      margin-top: 3rem;
+      @include breakpoint($lg) {
+        margin-top: 6rem;
+      }
+      @include breakpoint($xl) {
+        margin-top: 8rem;
+      }
     }
   }
 

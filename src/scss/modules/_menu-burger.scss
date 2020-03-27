@@ -1,9 +1,13 @@
 .menu-burger {
   position: fixed;
-  top: 0;
-  left: calc(100vw - 5rem);
+  top: 1rem;
+  left: calc(100vw - 4rem);
   height: 3rem;
   width: 3rem;
+  
+  @include breakpoint($md) {
+    left: calc(100vw - 5rem);
+  }
 
   & *,
   &::after,
@@ -17,7 +21,7 @@
     right: 15%;
     transform: scaleX(1);
     position: absolute;
-    width: 2rem;
+    width: 66%;
     height: 3px;
   }
 
@@ -26,7 +30,7 @@
     content: '';
     display: block;
     position: absolute;
-    width: 2rem;
+    width: 66%;
     height: 3px;
     top: 35%;
     left: 5%;
@@ -37,7 +41,7 @@
     content: '';
     display: block;
     position: absolute;
-    width: 2rem;
+    width: 66%;
     height: 3px;
     top: 65%;
     left: 5%;
@@ -58,11 +62,11 @@
     }
 
     &::before {
-      transform: rotate(45deg) translate(10px);
+      transform: rotate(45deg) translate(33%);
     }
 
     &::after {
-      transform: rotate(-45deg) translate(10px);
+      transform: rotate(-45deg) translate(33%);
     }
   }
 

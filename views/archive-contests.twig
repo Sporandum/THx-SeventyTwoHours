@@ -1,9 +1,15 @@
 {% extends "base.twig" %}
 
+{% block title %}
+	<div class="wrapper">
+		<h1 class="headline headline--upper">{{wp_title}}</h1>
+	</div>
+{% endblock %}
+
 {% block content %}
+
 	<div class="wrapper wrapper--contests">
 		<div class="contests">
-			<h1 class="headline headline--upper">{{wp_title}}</h1>
 			<div class="contests__cards">
 				{% for post in posts %}
 					<div class="contests__card">

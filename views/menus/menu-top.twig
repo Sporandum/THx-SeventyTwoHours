@@ -1,4 +1,10 @@
     {% for item in header_menu_top.items %}
         <li><a href="{{item.link}}">{{item.title}}</a></li>
     {% endfor %}
-        <li><a href="#">Connexion</a></li>
+        {% if user %}
+        <li><a href="{{fn('wp_logout_url')}}">Logout</a></li>
+        {% else %}
+        <li><a href="{{site.url}}/log-in">Login</a></li>
+            
+        
+        {% endif %}

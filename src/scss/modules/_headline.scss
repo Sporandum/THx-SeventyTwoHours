@@ -5,9 +5,11 @@
   line-height: 1.4;
   margin: 0;
   word-break: break-all;
+  
 
   @include breakpoint($md) {
     font-size: 4rem;
+    word-break: normal;
   }
 
   &--upper {

@@ -26,7 +26,7 @@
             </ul>
         </div>
      
-        <div id="menu-mobile" class="menu-mobile__container">
+        <div aria-hidden="true" id="menu-mobile" class="menu-mobile__container">
 
             {{ include('_header-logo.twig', {headerLogoClass : 'header__logo header__logo--menu-mobile'})}}
 
@@ -41,12 +41,17 @@
                 {% include "menus/menu-right.twig" %}
             </ul>
         </div>
-        <div id="menu-mobile-trigger" class="menu-burger menu-burger--is-black">
+        <div aria-hidden="true"  id="menu-mobile-trigger" class="menu-burger menu-burger--is-black">
             <div></div>
         </div>
     </header>
     {% endblock %}
 
+    {% block title %}
+        <div class="wrapper">
+            <h1 class="headline headline--upper">{{post.title}}</h1>
+        </div>
+    {% endblock %}
     
     {% block content %}
     
