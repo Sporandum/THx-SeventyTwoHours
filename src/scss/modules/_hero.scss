@@ -12,6 +12,15 @@
     background: #0f0f0f;
   }
 
+  &--content {
+    display: block;
+    height: auto;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   &__bg {
     height: inherit;
     img {
