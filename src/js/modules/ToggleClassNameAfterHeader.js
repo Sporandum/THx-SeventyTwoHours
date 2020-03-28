@@ -8,7 +8,7 @@ class ToggleClassNameAfterHeader {
     this.headerEl = document.getElementById('site-header')
     this.headerHeight = this.getHeaderHeight()
     this.isInHeader
-    console.log(this)
+    // console.log(this)
     if (this.el && this.headerEl) {
       this.events();
     }
