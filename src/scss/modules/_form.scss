@@ -1,8 +1,17 @@
 .form {
 
+  p {
+    margin: 0;
+  }
+
+  br {
+    display: none;
+  }
+
   @mixin form__font {
     font-size: 0.6rem;
     color: $color__black;
+
     @include breakpoint($md) {
       font-size: 1.75rem;
     }
@@ -37,6 +46,13 @@
     &:focus {
       outline: 1px solid rgba($color: #000000, $alpha: 0.4);
       border: 1px solid $color__primary;
+    }
+  }
+
+  &--contact {
+    textarea {
+      max-height: 242px;
+      resize: none;
     }
   }
 

@@ -117,4 +117,15 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="wrapper has-mb-3">
+		<h2 class="headline headline--upper">Contact</h2>
+	</div>
+	<div class="wrapper wrapper--user-form">
+		{% filter shortcodes %}
+			[contact-form-7 id="210" title="Formulaire de contact sans champ nom" html_class="form form--contact"]
+		{% endfilter %}
+	</div>
 {% endblock %}
+
+
