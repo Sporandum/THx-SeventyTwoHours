@@ -31,7 +31,6 @@
     position: fixed;
     padding-top: 0.5rem;
     transition: opacity 0.5s ease-in-out;
-    visibility: visible;
     opacity: 1;
 
     &--right-on-xxl {
@@ -42,7 +41,6 @@
     }
 
     &--hide {
-      visibility: hidden;
       opacity: 0;
     }
 

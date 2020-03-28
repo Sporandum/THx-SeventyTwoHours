@@ -27,13 +27,13 @@ if (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') {
 }
 
 // redirect WP logged out url to Profile Builder Page login
-// if (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') {
-// 	if (!empty($_GET['loggedout']) && $_GET['loggedout'] === 'true') {
-// 		if (get_page_by_path('/log-in')) {
-// 			wp_safe_redirect(site_url('/log-in?loggedout=true'));
-// 		}
-// 	}
-// }
+if (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') {
+	if (!empty($_GET['loggedout']) && $_GET['loggedout'] === 'true') {
+		if (get_page_by_path('/log-in')) {
+			wp_safe_redirect(site_url('/log-in?loggedout=true'));
+		}
+	}
+}
 // if (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') {
 // 	if (!empty($_GET['reauth']) && $_GET['reauth'] == 1) {
 // 		if (get_page_by_path('/log-in')) {
