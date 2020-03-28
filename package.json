@@ -19,6 +19,7 @@
     "archive": "wpackio-scripts pack"
   },
   "dependencies": {
-    "@wpackio/entrypoint": "^4.4.0"
+    "@wpackio/entrypoint": "^4.4.0",
+    "lazysizes": "^5.2.0"
   }
 }

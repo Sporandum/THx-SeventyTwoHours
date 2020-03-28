@@ -25,13 +25,13 @@
 	</div>
 	<div class="hero hero--bg">
 		<picture class="hero__bg">
-			<source srcset="{{theme.link}}/assets/img/alexandre-debieve-1115827-unsplash.jpg 1x,
+			<source data-srcset="{{theme.link}}/assets/img/alexandre-debieve-1115827-unsplash.jpg 1x,
 							{{theme.link}}/assets/img/alexandre-debieve-1115827-unsplash@2x.jpg 2x"
 					media="(min-width: 376px)">
-			<img 	src="{{theme.link}}/assets/img/Background.jpg" 
-					srcset="{{theme.link}}/assets/img/Background.jpg 1x, 
+			<img 	data-src="{{theme.link}}/assets/img/Background.jpg" 
+					data-srcset="{{theme.link}}/assets/img/Background.jpg 1x, 
 							{{theme.link}}/assets/img/Background@2x.jpg 2x" 
-					alt="">
+					alt="" class="lazyload" >
 		</picture>
 	</div>
 	<div class="menu-desktop__container menu-desktop__container--hide-on-scroll">
@@ -53,9 +53,9 @@
 		<div class="hero hero--content">
 			<div class="hero__brand-logo">
 			<picture>
-				<source srcset="{{theme.link}}/assets/img/logo_72hours_web.png"
+				<source data-srcset="{{theme.link}}/assets/img/logo_72hours_web.png"
 						media="(min-width: 600px)" >
-				<img src="{{theme.link}}/assets/img/logo_72hours_mobile.png" alt="Logo 72hours">
+				<img data-src="{{theme.link}}/assets/img/logo_72hours_mobile.png" alt="Logo 72hours" class="lazyload">
 			</picture>
 			</div>
 		</div>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="front-page__card-img">
-							<img src="{{media.src}}" alt="{{media.alt}}" srcset="{{media.srcset}}" sizes="{{media.img_sizes}}">
+							<img data-src="{{media.src|towebp}}" alt="{{media.alt}}" data-srcset="{{media.srcset}}" data-sizes="{{media.img_sizes}}" class="lazyload">
 						</div>
 						{% if item.has_call_to_action %}
 							{% set btn = item.call_to_action %}
