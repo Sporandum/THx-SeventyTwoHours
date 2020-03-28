@@ -10,18 +10,16 @@ class MenuDesktop {
     this.socialEL = document.querySelectorAll('.menu-desktop--social')
 
     this.breakpointStart = breakpointStart
+    this.lastScrollY = window.scrollY
     this.isRunStatus = false
 
-    this.init()
     this.isRun()
+    this.init()
   }
-
+  
   // events
   events() {
-    window.addEventListener('scroll', () => {
-      // console.log('MenuDesktop Scroll run')
-      this.updateAll()
-    })
+    requestAnimationFrame(() => this.updateAll())
 
     window.addEventListener('resize', debounce(() => {
       // console.log('MenuDesktop Resize run')
@@ -31,6 +29,14 @@ class MenuDesktop {
   }
 
   // methods
+  isRun() {
+    if (window.innerWidth > this.breakpointStart) {
+      this.isRunStatus = true
+    } else {
+      this.isRunStatus = false
+    }
+  }
+
   init() {
     let header = document.getElementById('site-header')
     if (header.getAttribute('data-menu') === 'scroll') {
@@ -55,20 +61,14 @@ class MenuDesktop {
   }
 
   updateAll() {
-    if (this.isRunStatus) {
+    if (this.isRunStatus && this.lastScrollY != window.scrollY) {
       this.updateSide(this.leftEL)
       this.updateSide(this.rightEL)
       this.updateTop(this.topEL)
       this.updateTop(this.socialEL)
     }
-  }
-
-  isRun() {
-    if (window.innerWidth > this.breakpointStart) {
-      this.isRunStatus = true
-    } else {
-      this.isRunStatus = false
-    }
+    this.lastScrollY = window.scrollY
+    requestAnimationFrame(() => this.updateAll())
   }
 }
 
