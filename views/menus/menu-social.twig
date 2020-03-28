@@ -1,3 +1,9 @@
-        <li><a href="#"><span class="sr-only">Instagram</span><img src="{{theme.link}}/assets/img/instagram.png" alt="Logo instagram" srcset="{{theme.link}}/assets/img/instagram@2x.png 2x" ></a></li>
-        <li><a href="#"><span class="sr-only">Twitter</span><img src="{{theme.link}}/assets/img/twitter.png" alt="Logo twitter" srcset="{{theme.link}}/assets/img/twitter@2x.png 2x"></a></li>
-        <li><a href="#"><span class="sr-only">Facebook</span><img src="{{theme.link}}/assets/img/facebook.png" alt="Logo facebook" srcset="{{theme.link}}/assets/img/facebook@2x.png 2x"></a></li>
+        {% if social_links.instagram %}
+                <li><a href="{{social_links.instagram}}"><span class="sr-only">Instagram</span><img src="{{theme.link}}/assets/img/instagram.png" alt="Logo instagram" srcset="{{theme.link}}/assets/img/instagram@2x.png 2x" ></a></li>
+        {% endif %}
+        {% if social_links.twitter %}
+                <li><a href="{{social_links.twitter}}"><span class="sr-only">Twitter</span><img src="{{theme.link}}/assets/img/twitter.png" alt="Logo twitter" srcset="{{theme.link}}/assets/img/twitter@2x.png 2x"></a></li>
+        {% endif %}
+        {% if social_links.facebook %}
+                <li><a href="{{social_links.facebook}}"><span class="sr-only">Facebook</span><img src="{{theme.link}}/assets/img/facebook.png" alt="Logo facebook" srcset="{{theme.link}}/assets/img/facebook@2x.png 2x"></a></li>
+        {% endif %}

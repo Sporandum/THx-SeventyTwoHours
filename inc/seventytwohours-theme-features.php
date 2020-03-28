@@ -1,6 +1,6 @@
 <?php
 
-// Theme support
+// Theme supports
 add_action('after_setup_theme', 'seventytwohours_features');
 function seventytwohours_features()
 {
@@ -40,13 +40,7 @@ function hide_editor()
 	}
 }
 
-// Remove <p> tag around input in contact form 7 plugin
-// add_filter('wpcf7_autop_or_not', '__return_false');
-
-// Remove Web site from comments fields
-add_filter('comment_form_default_fields', 'remove_comments_field');
-function remove_comments_field($fields)
-{
-	unset($fields['url']);
-	return $fields;
+// ACF Options page
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
 }

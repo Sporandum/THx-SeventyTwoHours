@@ -7,4 +7,4 @@ $context = Timber::context();
 $post = new Post();
 $context['post'] = $post;
 
-Timber::render( 'front-page.twig', $context);
+Timber::render('front-page.twig', $context);
