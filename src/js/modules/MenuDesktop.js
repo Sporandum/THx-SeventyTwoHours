@@ -7,6 +7,7 @@ class MenuDesktop {
     this.leftEL = document.querySelectorAll('.menu-desktop--left')
     this.rightEL = document.querySelectorAll('.menu-desktop--right')
     this.topEL = document.querySelectorAll('.menu-desktop--top')
+    this.socialEL = document.querySelectorAll('.menu-desktop--social')
 
     this.breakpointStart = breakpointStart
     this.isRunStatus = false
@@ -58,6 +59,7 @@ class MenuDesktop {
       this.updateSide(this.leftEL)
       this.updateSide(this.rightEL)
       this.updateTop(this.topEL)
+      this.updateTop(this.socialEL)
     }
   }
 

@@ -77,4 +77,16 @@
       margin-right: 3.75rem;
     }
   }
+
+  &--social {
+    padding-right: calc((50vw - 822px) + 5rem);
+    top: 0;
+    right: 2rem;
+    height: 5rem;
+    align-items: center;
+
+    li {
+      margin-left: 0.2rem;
+    }
+  }
 }

@@ -15,3 +15,7 @@
 .current-menu-item {
   color: $color__primary;
 }
+
+.has-reverse-colors {
+    filter: invert(1);
+}

@@ -14,6 +14,9 @@
 		<ul class="menu-desktop menu-desktop--top">
 			{% include "menus/menu-top.twig" %}
 		</ul>
+		<ul class="menu-desktop menu-desktop--social has-reverse-colors">
+			{% include "menus/menu-social.twig" %}
+		</ul>
 		<ul class="menu-desktop menu-desktop--right">
 			{% include "menus/menu-right.twig" %}
 		</ul>
@@ -36,19 +39,22 @@
 		<ul class="menu-desktop menu-desktop--top">
 			{% include "menus/menu-top.twig" %}
 		</ul>
+		<ul class="menu-desktop menu-desktop--social">
+			{% include "menus/menu-social.twig" %}
+		</ul>
 		<ul class="menu-desktop menu-desktop--right">
 			{% include "menus/menu-right.twig" %}
 		</ul>
 	</div>
-	<div class="hero">
-		<div class="hero__brand-logo">
-		<picture>
-			<source srcset="{{theme.link}}/assets/img/logo_72hours_web.png"
-					media="(min-width: 600px)" >
-			<img src="{{theme.link}}/assets/img/logo_72hours_mobile.png" alt="Logo 72hours">
-		</picture>
+		<div class="hero hero--content">
+			<div class="hero__brand-logo">
+			<picture>
+				<source srcset="{{theme.link}}/assets/img/logo_72hours_web.png"
+						media="(min-width: 600px)" >
+				<img src="{{theme.link}}/assets/img/logo_72hours_mobile.png" alt="Logo 72hours">
+			</picture>
+			</div>
 		</div>
-	</div>
 	<div aria-hidden="true" id="menu-mobile" class="menu-mobile__container">
 
 		{{ include('_header-logo.twig', {headerLogoClass : 'header__logo header__logo--menu-mobile'})}}
@@ -61,6 +67,9 @@
 		</ul>
 		<ul class="menu-mobile">
 			{% include "menus/menu-right.twig" %}
+		</ul>
+		<ul class="menu-mobile menu-mobile--social has-reverse-colors">
+			{% include "menus/menu-social.twig" %}
 		</ul>
 	</div>
 	<div aria-hidden="true" id="menu-mobile-trigger" class="menu-burger">
