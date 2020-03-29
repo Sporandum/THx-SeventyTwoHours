@@ -7,8 +7,9 @@ class ToggleClassNameAfterHeader {
     this.addOrRemove = addOrRemove
     this.headerEl = document.getElementById('site-header')
     this.headerHeight = this.getHeaderHeight()
-    this.isInHeader
+    this.isInHeader = window.scrollY > this.headerHeight ? true : false
     // console.log(this)
+
     if (this.el && this.headerEl) {
       this.events();
     }

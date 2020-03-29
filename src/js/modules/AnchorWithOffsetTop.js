@@ -10,7 +10,7 @@ class AnchorWithOffsetTop {
     if (this.anchorTarget) {
       this.events()
     }
-    console.log(this)
+    // console.log(this)
   }
 
 
