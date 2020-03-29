@@ -42,12 +42,36 @@
   }
 
   &--outline-black {
-    border: 5px solid $color__black;
-    background: $color__white;
-    color: $color__black;
+    border: 5px solid black;
+    background: white;
+    color: black;
     border-radius: 0;
     font-weight: 900;
     padding: 1em;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+      mix-blend-mode: difference;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
 
     @include breakpoint($lg) {
       font-size: 1.75rem;
@@ -57,7 +81,7 @@
 
   &--fill-black {
     @extend .btn--outline-black;
-    background: $color__black;
-    color: $color__white;
+    background: black;
+    color: white;
   }
 }

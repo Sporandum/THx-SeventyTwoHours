@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+	<div class="wrapper wrapper--billetterie">
+		<div class="billetterie">
+			<div class="billetterie__bg">
+				<img src="{{theme.link ~ '/assets/img/alexandre-debieve-1115827-unsplash.jpg'}}" alt="Image de fond" srcset="{{theme.link ~ '/assets/img/alexandre-debieve-1115827-unsplash@2x.jpg' }} 2x">
+			</div>
+			<div class="billetterie__img-tickets">
+				<img src="{{theme.link ~'/assets/img/tickets.png'}}" alt="Tickets de 72 hours" srcset="{{theme.link ~ '/assets/img/tickets@2x.png'}} 2x">
+			</div>
+			<div class="billetterie__content">
+				{% set item = post.meta('billetterie_content') %}
+				<h1 class="headline headline--upper headline--white has-mb-2">{{item.title}}</h1>
+				<h2 class="headline headline--upper headline--small headline--white">{{item.sub_title}}</h2>
+				<div class="generic-content is-text-white">{{item.content}}</div>
+			</div>
+		</div>
+	</div>
+	{% if post.meta('billetterie_sell') %}
+        {% set item = post.meta('billetterie_sell') %}
+		<div class="wrapper">
+			<div class="billetterie-sell">
+				<span class="billetterie-sell__price">{{item.participants.price}}€</span>
+				<a href="{{item.participants.link}}" class="btn btn--fill-black">Participants</a>
+				<a href="{{item.participants.link}}" class="btn btn--outline-black">visiteurs</a>
+				<span class="billetterie-sell__price">{{item.visitors.price}}€</span>
+			</div>
+		</div>
+	{% endif %}
+
+{% endblock %}

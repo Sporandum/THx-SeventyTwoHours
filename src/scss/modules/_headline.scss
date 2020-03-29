@@ -12,6 +12,10 @@
     word-break: normal;
   }
 
+  &--white {
+    color: $color__white;
+  }
+
   &--upper {
     text-transform: uppercase;
   }

@@ -31,7 +31,8 @@ function hide_editor()
 	$pages_ID = array(
 		get_option('page_on_front'), // Front Page
 		get_page_by_path('programme')->ID,
-		get_page_by_path('infos-pratiques ')->ID,
+		get_page_by_path('infos-pratiques')->ID,
+		get_page_by_path('billetterie')->ID,
 	);
 
 	foreach ($pages_ID as $page_ID) {

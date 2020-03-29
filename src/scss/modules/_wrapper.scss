@@ -54,4 +54,11 @@
   .wrapper {
     padding: 0;
   }
+
+  &--billetterie {
+    @include breakpoint(max-width 500px) {
+      padding: 0;
+      margin-top: 5rem !important;
+    }
+  }
 }
