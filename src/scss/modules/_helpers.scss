@@ -12,7 +12,8 @@
 }
 
 %current-menu-item,
-.current-menu-item {
+.current-menu-item,
+.is-current-menu-item {
   color: $color__primary;
 }
 

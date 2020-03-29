@@ -18,6 +18,7 @@ function add_menus_to_context($context) {
 	$context['header_menu_left'] = new Menu('header_menu_left');
 	$context['header_menu_top'] = new Menu('header_menu_top');
 	$context['header_menu_right'] = new Menu('header_menu_right');
+	$context['footer_menu'] = new Menu('footer_menu');
 
 	$context['privacy_url'] = get_privacy_policy_url();
 	$context['privacy_title'] = get_the_title((int) get_option('wp_page_for_privacy_policy'));

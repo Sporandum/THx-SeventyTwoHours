@@ -1,9 +1,9 @@
 <footer class="site-footer">
     <div class="wrapper wrapper--large wrapper--footer">
         <ul class="site-footer__menu-items">
-            <li class="site-footer__menu-item site-footer__menu-item--current"><a href="#">News</a></li>
-            <li class="site-footer__menu-item"><a href="#">Programme</a></li>
-            <li class="site-footer__menu-item"><a href="#">Infos Pratique</a></li>
+        {% for item in footer_menu.items %}
+            <li class="site-footer__menu-item {{item.current ? 'is-current-menu-item' : ''}}"><a href="{{item.link}}">{{item.title}}</a></li>
+        {% endfor %}
         </ul>
     </div>
     <div class="wrapper">

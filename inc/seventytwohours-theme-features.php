@@ -19,7 +19,8 @@ function seventytwohours_features()
 	register_nav_menus(array(
 		'header_menu_left' => 'Primary Menu Left',
 		'header_menu_top' => 'Primary Menu Top',
-		'header_menu_right' => 'primary Menu Right'
+		'header_menu_right' => 'primary Menu Right',
+		'footer_menu' => 'Footer Menu'
 	));
 }
 

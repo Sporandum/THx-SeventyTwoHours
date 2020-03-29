@@ -1,5 +1,5 @@
     {% for item in header_menu_top.items %}
-        <li><a href="{{item.link}}">{{item.title}}</a></li>
+        <li class="{{item.current ? 'is-current-menu-item' : ''}}"><a href="{{item.link}}">{{item.title}}</a></li>
     {% endfor %}
         {% if user %}
         <li><a href="{{fn('wp_logout_url')}}">Logout</a></li>
