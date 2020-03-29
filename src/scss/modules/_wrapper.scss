@@ -32,7 +32,7 @@
   &--hero {
     height: 476px;
 
-    @include breakpoint(376px) {
+    @include breakpoint(420px) {
       height: 100vh;
       max-width: 100%;
     }

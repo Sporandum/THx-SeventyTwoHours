@@ -4,7 +4,7 @@
   left: calc(100vw - 4rem);
   height: 3rem;
   width: 3rem;
-  
+
   @include breakpoint($md) {
     left: calc(100vw - 5rem);
   }
@@ -23,6 +23,22 @@
     position: absolute;
     width: 66%;
     height: 3px;
+    color: white;
+
+    @include breakpoint($md) {
+
+      &::after {
+        content: 'MENU';
+        display: block;
+        position: absolute;
+        left: -1.25rem;
+        font-size: 1.55rem;
+        height: auto;
+        transform: translate(-100%, -12px);
+        color: inherit;
+      }
+    }
+
   }
 
 
@@ -71,6 +87,10 @@
   }
 
   &--is-black {
+
+    div::after {
+      color: $color__black;
+    }
 
     & *,
     &::after,
