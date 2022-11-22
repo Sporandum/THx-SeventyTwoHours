@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@wpackio/scripts": "^4.4.0",
+    "@wpackio/scripts": "^6.4.0",
     "breakpoint-sass": "^2.7.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
